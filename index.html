@@ -1,0 +1,51 @@
+<html>
+  <head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="sticker_by_number_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="sticker_by_number_generator.css">
+
+		<!-- Include "Croppie" to make it easy to select your image -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.3/croppie.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.3/croppie.min.css">
+
+    <title>Sticker By Number Generator</title>
+  </head>
+  <body>
+    <p>This page lets you choose an image, and break that image into a scrambled sheet of printable stickers (meant to be printed onto a sticker sheet). Kids can then re-assemble the stickers to make the original image.</p>
+
+
+    <table style="width: 100%;">
+      <tr><td colspan="2"><b>Sticker Sheet Configuration</b></td></tr>
+      <tr><td>Square Sticker Size</td><td><input type="number" value="0.5" placeholder="0.5" id="sticker_size"> (inches)</td></tr>
+      <tr><td>Top Margin</td><td><input type="number" value="0.2505" id="margin_top"></td></tr>
+      <tr><td>Left Margin</td><td><input type="number" value="0.25" id="margin_left"></td></tr>
+      <tr><td>Horizontal Spacing</td><td><input type="number" value="0.125" id="spacing_horiz"></td></tr>
+      <tr><td>Vertical Spacing</td><td><input type="number" value="0.125" id="spacing_vert"></td></tr>
+      <tr><td>Number of squares across</td><td><input type="number" value="13" id="sticker_cols"></td></tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr><td colspan="2"><b>Image Configuration</b></td></tr>
+      <tr><td># Rows</td><td><input type="number" id="rows" value="10"></td></tr>
+      <tr><td># Columns</td><td><input type="number" id="cols" value="10"> <span id="output_num_stickers"></span></td></tr>
+      <tr><td>Pixels per inch</td><td><input type="number" id="ppi" value="96"></td></tr>
+      <tr><td>Image</td><td><input type="file" id="image"></td></tr>
+    </table>
+
+		<b>Image Selection</b>
+		<div id="croppie_container" style="display: none; max-width: 300px;">
+			<div id="croppie" style=""></div>
+		</div>
+
+    
+    <button onClick="javascript:generateImages();">Generate Image</button>
+    <br><br>
+
+    <canvas style="display: none;" id="grid_canvas"></canvas>
+    <canvas style="display: none;" id="image_canvas"></canvas>
+
+    <canvas style="display: none;" id="temp_image"></canvas>
+    <div id="output_image"></div>
+    <br>
+    <div id="output_grid"></div>
+
+  </body>
+</html>
