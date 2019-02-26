@@ -42,7 +42,7 @@ function generateImage() {
   var total_width_with_margins = actual_width + (space_horiz * (num_cols + 1));
   var total_height_with_margins = actual_height + (space_vert * (num_rows + 1));
 
-  var output_width_with_margins = (sticker_cols * box_size) + (space_horiz * (sticker_cols + 1)) + (margin_left * 2);
+  var output_width_with_margins = (sticker_cols * box_size) + (space_horiz * (sticker_cols)) + (margin_left * 2);
   var num_stickers = (num_rows * num_cols)
   num_output_rows = Math.floor(num_stickers / sticker_cols);
   if (num_stickers % sticker_cols > 0) {
