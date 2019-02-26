@@ -33,14 +33,13 @@ function generateImage() {
   console.log("Box size; " + box_size);
   console.log("Space horiz; " + space_horiz);
   console.log("Multiplied together: " + (num_cols * space_horiz));
-  console.log("Width basic size: " + (num_cols * box_size) + " Spacing: " + (space_horiz * (num_cols + 1)));
 
   var actual_width = num_cols * box_size;
   var actual_height = num_rows * box_size;
   var actual_width_with_border = actual_width + space_horiz
   var actual_height_with_border = actual_height + space_vert
-  var total_width_with_margins = actual_width + (space_horiz * (num_cols + 1));
-  var total_height_with_margins = actual_height + (space_vert * (num_rows + 1));
+  var total_width_with_margins = actual_width + (space_horiz * (num_cols));
+  var total_height_with_margins = actual_height + (space_vert * (num_rows));
 
   var output_width_with_margins = (sticker_cols * box_size) + (space_horiz * (sticker_cols)) + (margin_left * 2);
   var num_stickers = (num_rows * num_cols)
@@ -48,7 +47,7 @@ function generateImage() {
   if (num_stickers % sticker_cols > 0) {
     num_output_rows += 1;
   }
-  var output_height_with_margins = (num_output_rows * box_size) + (space_vert * (num_output_rows + 1)) + (margin_top * 2);
+  var output_height_with_margins = (num_output_rows * box_size) + (space_vert * (num_output_rows)) + (margin_top * 2);
 
 	console.log("Total dimensions including margins when getting result: " + actual_width_with_border + "x" + actual_height_with_border);
 
