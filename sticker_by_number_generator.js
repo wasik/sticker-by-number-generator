@@ -83,9 +83,9 @@ function addNumbersToTempImage() {
 
 	var context = $("#temp_image").get(0).getContext("2d");
 
-  var font_size = sticker_size * 0.18;
-  if (font_size < 6) {
-    font_size = 6; //Ensure a min font size
+  var font_size = sticker_size * 0.25;
+  if (font_size < 7) {
+    font_size = 7; //Ensure a min font size
   }
 	context.font = font_size + "px Arial";
 
